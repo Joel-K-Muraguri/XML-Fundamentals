@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.fragment.findNavController
 import com.joel.navigation.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -22,6 +24,8 @@ class FavouritesFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private lateinit var root : View
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -29,6 +33,7 @@ class FavouritesFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
 
+        findView()
 
     }
 
@@ -37,7 +42,16 @@ class FavouritesFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_favourites, container, false)
+        findView()
+        root = inflater.inflate(R.layout.fragment_favourites, container, false)
+        return  root
+    }
+
+    fun findView(){
+        val favouriteButton : Button = root.findViewById(R.id.favourite_button)
+        favouriteButton.setOnClickListener {
+            findNavController().navigate(R.id.action_favouritesFragment_to_profileFragment)
+        }
     }
 
     companion object {
