@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Navigation</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hi_i_m_joel">Hi I\'m Joel</string>
+    <string name="welcome_home">Welcome Home</string>
+</resources>
