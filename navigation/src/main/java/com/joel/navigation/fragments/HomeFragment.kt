@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import com.joel.navigation.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -27,6 +28,7 @@ class HomeFragment : Fragment() {
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+
         }
     }
 
@@ -35,7 +37,12 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        val root = inflater.inflate(R.layout.fragment_home, container, false)
+        val homeButton : Button = root.findViewById<Button>(R.id.home_button)
+        root.setOnClickListener {
+
+        }
+        return root
     }
 
     companion object {
