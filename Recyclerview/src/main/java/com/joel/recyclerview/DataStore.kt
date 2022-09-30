@@ -111,7 +111,7 @@ object DataStore {
 
         ),
         Todo(
-            title = "Hi",
+            title = "Joel",
             isChecked = false
 
         ), Todo(
