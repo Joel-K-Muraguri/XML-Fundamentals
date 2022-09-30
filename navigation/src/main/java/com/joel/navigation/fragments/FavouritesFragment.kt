@@ -51,6 +51,8 @@ class FavouritesFragment : Fragment() {
         favourite_button.setOnClickListener {
             findNavController().navigate(R.id.action_favouritesFragment_to_profileFragment)
 
+
+
         }
     }
 
