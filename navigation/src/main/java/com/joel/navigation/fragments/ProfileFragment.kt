@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
 import com.joel.navigation.R
+import kotlinx.android.synthetic.main.fragment_profile.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,7 +26,6 @@ class ProfileFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
-    private lateinit var root: View
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +33,6 @@ class ProfileFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
-        findView()
     }
 
     override fun onCreateView(
@@ -41,17 +40,16 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
-        findView()
-        root = inflater.inflate(R.layout.fragment_profile, container, false)
-        return root
+
+        return  inflater.inflate(R.layout.fragment_profile, container, false)
+
     }
 
-    fun findView(){
-        val profileButton : Button = root.findViewById(R.id.profile_button)
-        profileButton.setOnClickListener {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        profile_button.setOnClickListener {
             findNavController().navigate(R.id.action_profileFragment_to_homeFragment2)
         }
-
     }
 
     companion object {

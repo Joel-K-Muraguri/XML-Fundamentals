@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
 import com.joel.navigation.R
+import kotlinx.android.synthetic.main.fragment_favourites.*
+import kotlinx.android.synthetic.main.fragment_favourites.view.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +26,6 @@ class FavouritesFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
-    private lateinit var root : View
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +34,6 @@ class FavouritesFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
 
-        findView()
 
     }
 
@@ -42,15 +42,15 @@ class FavouritesFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
-        findView()
-        root = inflater.inflate(R.layout.fragment_favourites, container, false)
-        return  root
+        return inflater.inflate(R.layout.fragment_favourites, container, false)
+
     }
 
-    fun findView(){
-        val favouriteButton : Button = root.findViewById(R.id.favourite_button)
-        favouriteButton.setOnClickListener {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        favourite_button.setOnClickListener {
             findNavController().navigate(R.id.action_favouritesFragment_to_profileFragment)
+
         }
     }
 
