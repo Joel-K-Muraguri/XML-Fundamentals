@@ -1,11 +1,11 @@
-package com.joel.room
+package com.joel.word
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class ListViewActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_room_db)
+        setContentView(R.layout.activity_main)
     }
 }

@@ -16,3 +16,4 @@ rootProject.name = "RecyclerView"
 include ':Recyclerview'
 include ':navigation'
 include ':room'
+include ':Note'
