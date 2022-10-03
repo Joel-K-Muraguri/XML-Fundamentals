@@ -50,7 +50,7 @@ class ProfileFragment : Fragment() {
         profile_button.setOnClickListener {
             findNavController().navigate(R.id.action_profileFragment_to_homeFragment2)
         }
-        
+
     }
 
     companion object {
