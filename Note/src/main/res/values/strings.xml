@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">word</string>
     <string name="add_icon">add icon</string>
+    <string name="title">TITLE</string>
+    <string name="description">Description</string>
+    <string name="delete_icon">delete icon</string>
+    <string name="add_edit_description">Description</string>
+    <string name="save">Save</string>
+    <string name="add_edit_title">Title</string>
 </resources>

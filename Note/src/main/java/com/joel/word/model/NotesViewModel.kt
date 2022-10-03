@@ -9,7 +9,7 @@ import kotlinx.coroutines.launch
 
 class NotesViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val allNotes : LiveData<List<Notes>>
+    val allNotes : LiveData<List<Notes>>
     private val repository : NotesRepository
 
 
@@ -36,7 +36,6 @@ class NotesViewModel(application: Application) : AndroidViewModel(application) {
     fun delete(notes: Notes) {
         viewModelScope.launch { Dispatchers.IO
             repository.delete(notes)
-
         }
     }
 
